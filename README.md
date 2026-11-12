@@ -22,7 +22,7 @@
 | **`[INFORMATION_SCIENCE]`** | System Architecture, Algorithms, Database Modeling |
 | **`[NEUROSCIENCE]`** | Brain Science, Neural Encoding, Computational Cognitive Modeling |
 | **`[PSYCHOLOGY]`** | Cognitive Processes, Behavioral Analysis, Human-Computer Interaction |
-| **`[GAME_DEVELOPMENT]`** | 2D RPG Engines (GML), Finite State Machines, Vector Math, Narrative Design |
+| **`[GAME_DEVELOPMENT]`** | 2D Game, Maybe 3D in future, As long as it's fun |
 
 ---
 
