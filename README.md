@@ -10,7 +10,7 @@
 
 * **Background:** Information Management @ NCCU (Minor in Psychology, Brain Science Program)
 * **Core Focus:** Exploring the intersection of artificial intelligence, computational neuroscience, cognitive psychology, and system architecture.
-* **Indie Game Dev:** Building 2D narrative-driven RPGs from scratch using custom vector math and finite state machines.
+* **Indie Game Dev:** Game Developing n' shits.
 
 ---
 
