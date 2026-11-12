@@ -6,7 +6,7 @@
 
 ---
 
-### [ 01 // ABOUT_ME ]
+### [ 01 // ABOUT ]
 
 * **Background:** Information Management @ NCCU (Minor in Psychology, Brain Science Program)
 * **Core Focus:** Exploring the intersection of artificial intelligence, computational neuroscience, cognitive psychology, and system architecture.
@@ -29,6 +29,8 @@
 ### [ 03 // TECH_STACK ]
 
 ![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
+![C%23](https://img.shields.io/badge/C%23-1A1A1A?style=for-the-badge&logo=csharp&logoColor=239120)
+![Java](https://img.shields.io/badge/Java-1A1A1A?style=for-the-badge&logo=openjdk&logoColor=ED8B00)
 ![GameMaker](https://img.shields.io/badge/GameMaker-000000?style=for-the-badge&logo=gamemaker&logoColor=white)
 
 ---
