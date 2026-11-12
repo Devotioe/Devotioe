@@ -32,10 +32,3 @@
 ![GameMaker](https://img.shields.io/badge/GameMaker-000000?style=for-the-badge&logo=gamemaker&logoColor=white)
 
 ---
-
-### [ 04 // GITHUB_STATS ]
-
-<div align="center">
-  <img height="165em" src="[https://github-readme-stats.vercel.app/api?username=Devotioe&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&title_color=00F0FF&icon_color=00F0FF&text_color=C9D1D9](https://github-readme-stats.vercel.app/api?username=Devotioe&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&title_color=00F0FF&icon_color=00F0FF&text_color=C9D1D9)" />
-  <img height="165em" src="[https://github-readme-stats.vercel.app/api/top-langs/?username=Devotioe&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=00F0FF&text_color=C9D1D9](https://github-readme-stats.vercel.app/api/top-langs/?username=Devotioe&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=00F0FF&text_color=C9D1D9)" />
-</div>
