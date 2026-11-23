@@ -4,14 +4,12 @@
 
 </div>
 
-```text
-┌──────────────────────────────────────────────────────────────┐
-│  USER     : DEVO                                             │
-│  NODE     : National Chengchi University (NCCU) · Taipei     │
-│  CLASS    : Information Management                           │
-│  SUBCLASS : Psychology · Brain Science Program               │
-└──────────────────────────────────────────────────────────────┘
-```
+<div align="center">
+
+**Information Management @ National Chengchi University (NCCU), Taipei**<br/>
+<sub>Psychology & Brain Science Program</sub>
+
+</div>
 
 <div align="center">
 
