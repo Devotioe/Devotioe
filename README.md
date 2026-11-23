@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0D0D0D,50:003B46,100:00F0FF&height=180&section=header&text=DEVO%20%E3%83%87%E3%83%9C&fontSize=56&fontColor=E6FFFF&fontAlignY=38&desc=NCCU%20MIS%20%7C%20PSY%20%7C%20NI%20%7C%20GAME%20DEV&descAlignY=60&descSize=16&animation=fadeIn" width="100%" />
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=22&duration=2800&pause=900&color=00F0FF&center=true&vCenter=true&width=760&lines=%3E+SYSTEM.INIT(%22DEVO%22)...;%3E+loading+modules%3A+AI+%7C+MIS+%7C+NEURO+%7C+PSY;%3E+BUILDING+MINDS+%26+WORLDS+WITH+CODE;%3E+*+But+nobody+came.;%3E+*+You+are+filled+with+DETERMINATION." alt="Typing SVG" />
+<img src="./assets/header.svg" width="100%" alt="DEVO デボ" />
 
 [![Profile Views](https://komarev.com/ghpvc/?username=Devotioe&color=00F0FF&style=flat-square&label=VISITORS)](https://github.com/Devotioe)
 ![Status](https://img.shields.io/badge/STATUS-ONLINE-00F0FF?style=flat-square&labelColor=0D0D0D)
@@ -24,18 +22,9 @@
 
 ### `[ 01 // ABOUT ]`
 
-```python
-class Devo:
-    def __init__(self):
-        self.school   = "NCCU · Information Management"
-        self.minor    = ["Psychology", "Brain Science Program"]
-        self.focus    = ["AI", "Computational Neuroscience",
-                         "Cognitive Psychology", "System Architecture"]
-        self.side_quest = "Indie game dev (UNDERTALE fan game in progress)"
+Hi, I'm Devo. I study Information Management at National Chengchi University (NCCU), with a minor in Psychology and the Brain Science Program.
 
-    def motto(self):
-        return "As long as it's fun."
-```
+I'm interested in where AI, neuroscience and cognitive psychology meet, and how that shows up in the systems and games we build. Outside of class, I make games — currently working on an UNDERTALE fan game.
 
 ---
 
@@ -51,42 +40,17 @@ class Devo:
 
 ---
 
-### `[ 03 // ACTIVE_PROCESSES ]`
+### `[ 03 // ACTIVE_PROCESS ]`
 
-<table>
-<tr>
-<td width="50%" valign="top">
+<div align="center">
 
-#### ❤️ [UNDERTALE-Harmony](https://github.com/Devotioe/UNDERTALE-Harmony)
-`GameMaker Language`<br/>
-UNDERTALE ハーモニ — a fan game with multiple routes. Stay determined.
+### ❤️ [UNDERTALE ハーモニ](https://github.com/Devotioe/UNDERTALE-Harmony)
 
-</td>
-<td width="50%" valign="top">
+`GameMaker Language` · `IN DEVELOPMENT`
 
-#### ⏳ [queueless](https://github.com/Devotioe/queueless)
-`Python`<br/>
-An application for NCCU students.
+An UNDERTALE fan game with multiple routes.
 
-</td>
-</tr>
-<tr>
-<td width="50%" valign="top">
-
-#### 🧭 [college-explorer](https://github.com/Devotioe/college-explorer)
-`TypeScript`<br/>
-Explore colleges, the web-app way.
-
-</td>
-<td width="50%" valign="top">
-
-#### 💾 [1141_IntroToCS](https://github.com/Devotioe/1141_IntroToCS_114ZU1017)
-`HTML`<br/>
-Intro to Computer Science coursework.
-
-</td>
-</tr>
-</table>
+</div>
 
 ---
 
