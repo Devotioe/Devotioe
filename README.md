@@ -15,7 +15,7 @@
 
 <div align="center">
 
-<img src="./assets/dialogue.svg?v=9" width="600" alt="* all i need is to win once... * and i can get rid of you, once and for all. * is this really what you want?" />
+<img src="./assets/dialogue.svg?v=10" width="100%" alt="* all i need is to win once... * and i can get rid of you, once and for all. * is this really what you want?" />
 
 </div>
 
