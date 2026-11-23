@@ -52,7 +52,7 @@ An UNDERTALE fan game with multiple routes.
 <p>
 <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white" />
 <img src="https://img.shields.io/badge/Java-1A1A1A?style=for-the-badge&logo=openjdk&logoColor=ED8B00" />
-<img src="https://img.shields.io/badge/C%23-1A1A1A?style=for-the-badge&logo=csharp&logoColor=239120" />
+<img src="https://img.shields.io/badge/C%23-1A1A1A?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTEyIDEgMjEuNSA2LjV2MTFMMTIgMjMgMi41IDE3LjV2LTExeiIgZmlsbD0iIzIzOTEyMCIvPjxwYXRoIGQ9Ik0xMi4zIDguNEE0LjIgNC4yIDAgMSAwIDEyLjMgMTUuNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNMTUgOS41djVNMTcuNiA5LjV2NU0xMy45IDEwLjloNC44TTEzLjkgMTMuMWg0LjgiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjEiLz48L3N2Zz4K" />
 <img src="https://img.shields.io/badge/TypeScript-1A1A1A?style=for-the-badge&logo=typescript&logoColor=3178C6" />
 <img src="https://img.shields.io/badge/HTML5-1A1A1A?style=for-the-badge&logo=html5&logoColor=E34F26" />
 <img src="https://img.shields.io/badge/GameMaker-000000?style=for-the-badge&logo=gamemaker&logoColor=white" />
