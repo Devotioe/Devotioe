@@ -23,11 +23,11 @@
 
 | DOMAIN | FOCUS_AREAS |
 | :--- | :--- |
-| **`[ARTIFICIAL_INTELLIGENCE]`** | Machine Learning, Neural Architectures, Intelligent Systems |
-| **`[INFORMATION_SCIENCE]`** | System Architecture, Algorithms, Database Modeling |
-| **`[NEUROSCIENCE]`** | Brain Science, Neural Encoding, Computational Cognitive Modeling |
-| **`[PSYCHOLOGY]`** | Cognitive Processes, Behavioral Analysis, Human-Computer Interaction |
-| **`[GAME_DEVELOPMENT]`** | 2D games now, maybe 3D later, as long as it's fun |
+| **`ARTIFICIAL_INTELLIGENCE`** | Machine Learning, Neural Architectures, Intelligent Systems |
+| **`INFORMATION_SCIENCE`** | System Architecture, Algorithms, Database Modeling |
+| **`NEUROSCIENCE`** | Brain Science, Neural Encoding, Computational Cognitive Modeling |
+| **`PSYCHOLOGY`** | Cognitive Processes, Behavioral Analysis, Human-Computer Interaction |
+| **`GAME_DEVELOPMENT`** | 2D games now, maybe 3D later, as long as it's fun |
 
 ---
 
