@@ -28,9 +28,9 @@
   <rect class="bg" width="800" height="200" rx="12"/>
   <rect width="800" height="200" fill="url(#g)" rx="12"/>
   <g text-anchor="middle">
-    <text class="t c" x="400" y="112">DEVO デボ</text>
-    <text class="t r" x="400" y="112">DEVO デボ</text>
-    <text class="t main" x="400" y="112">DEVO デボ</text>
+    <text class="t c" x="400" y="112">DEVO</text>
+    <text class="t r" x="400" y="112">DEVO</text>
+    <text class="t main" x="400" y="112">DEVO</text>
     <text class="sub" x="400" y="152">NCCU MIS · PSY · NI · GAME DEV</text>
   </g>
   <rect class="cur" x="612" y="140" width="10" height="16"/>

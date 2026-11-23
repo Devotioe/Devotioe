@@ -1,20 +1,15 @@
 <div align="center">
 
-<img src="./assets/header.svg" width="100%" alt="DEVO デボ" />
-
-[![Profile Views](https://komarev.com/ghpvc/?username=Devotioe&color=00F0FF&style=flat-square&label=VISITORS)](https://github.com/Devotioe)
-![Status](https://img.shields.io/badge/STATUS-ONLINE-00F0FF?style=flat-square&labelColor=0D0D0D)
-![Mode](https://img.shields.io/badge/MODE-DETERMINED-FF0055?style=flat-square&labelColor=0D0D0D)
+<img src="./assets/header.svg" width="100%" alt="DEVO" />
 
 </div>
 
 ```text
 ┌──────────────────────────────────────────────────────────────┐
-│  USER     : DEVO // デボ                                      │
+│  USER     : DEVO                                             │
 │  NODE     : National Chengchi University (NCCU) · Taipei     │
 │  CLASS    : Information Management                           │
 │  SUBCLASS : Psychology · Brain Science Program               │
-│  QUEST    : building minds & worlds with code                │
 └──────────────────────────────────────────────────────────────┘
 ```
 
@@ -44,7 +39,7 @@ I'm interested in where AI, neuroscience and cognitive psychology meet, and how 
 
 <div align="center">
 
-### ❤️ [UNDERTALE ハーモニ](https://github.com/Devotioe/UNDERTALE-Harmony)
+### ❤️ [UNDERTALE Harmony](https://github.com/Devotioe/UNDERTALE-Harmony)
 
 `GameMaker Language` · `IN DEVELOPMENT`
 
