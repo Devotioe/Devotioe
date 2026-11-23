@@ -16,6 +16,8 @@
     .flash { animation: flash 16.0s infinite step-end; }
     @keyframes page2 { 0% { opacity: 0; } 61.250% { opacity: 1; } 100% { opacity: 1; } }
     .page2 { animation: page2 16.0s infinite step-end; }
+    @keyframes bones { 0% { transform: translateY(140px); } 47.5000% { transform: translateY(140px); } 48.2500% { transform: translateY(0); } 56.1875% { transform: translateY(0); } 56.2500% { transform: translateY(140px); } 100% { transform: translateY(140px); } }
+    .bones { animation: bones 16.0s infinite linear; }
     @keyframes page1 { 0% { opacity: 1; } 47.500% { opacity: 0; } 100% { opacity: 0; } }
     .page1 { animation: page1 16.0s infinite step-end; }
     @keyframes ty1 { 0% { transform: translateX(0); } 1.875% { transform: translateX(0); animation-timing-function: steps(30, end); } 16.875% { transform: translateX(317px); } 100% { transform: translateX(317px); } }
@@ -25,7 +27,7 @@
     @keyframes ty3 { 0% { transform: translateX(0); } 62.500% { transform: translateX(0); animation-timing-function: steps(31, end); } 78.000% { transform: translateX(354px); } 100% { transform: translateX(354px); } }
     .ty3 { animation: ty3 16.0s infinite linear; }
   </style>
-  <defs><clipPath id="in"><rect x="12" y="12" width="696" height="126"/></clipPath></defs>
+  <defs><symbol id="bone" viewBox="0 0 14 110" width="14" height="110" shape-rendering="crispEdges"><rect x="4" y="4" width="6" height="102" fill="#fff"/><rect x="0" y="0" width="6" height="8" fill="#fff"/><rect x="8" y="0" width="6" height="8" fill="#fff"/><rect x="0" y="102" width="6" height="8" fill="#fff"/><rect x="8" y="102" width="6" height="8" fill="#fff"/></symbol><clipPath id="in"><rect x="12" y="12" width="696" height="126"/></clipPath></defs>
   <rect width="720" height="150" fill="#000"/>
   <rect x="6" y="6" width="708" height="138" fill="none" stroke="#FFFFFF" stroke-width="6"/>
   <image class="closed" x="30" y="15" width="120" height="120" style="image-rendering:pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4AQAAAAARHwt/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAd2KE6QAAAAHdElNRQfhAhwFOzaEAGGKAAAAvklEQVQ4y+3TwQrDIAwGYCEPkIfZdZBXF3Yd+CqBXoV/yRxUrelphw2aHuwHUcQkKV3x/yEATkxG1Nie3m+Y/E4HNDI318jtuP3A2R8ir03fsq7NX7DYF7o018gPVAFDI+fmnNcmyxOxNbIVonJOnNZO9lDuGlmwKW04MSvZlUIXKPX1n4zir7nt9Z9N59and1SWyFD/uyF0LSL3Ehtslq5fRws8H6HZO4H6+RhNY/sf3AZmntfOaUw/+opfjReEGpo4GqFA2wAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNy0wMi0xMVQxNjo0NDo1My0wODowMKznD/QAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTctMDItMTFUMTY6NDQ6NTMtMDg6MDDdurdIAAAAAElFTkSuQmCC"/>
@@ -44,5 +46,6 @@
   <text class="t" x="170" y="62" textLength="354" lengthAdjust="spacing">* is this really what you want?</text>
   <g clip-path="url(#in)"><rect class="cv ty3" x="168" y="38" width="560" height="34"/></g>
   </g>
+  <g clip-path="url(#in)"><g class="bones"><use href="#bone" x="170" y="26"/><use href="#bone" x="190" y="26"/><use href="#bone" x="210" y="26"/><use href="#bone" x="230" y="26"/><use href="#bone" x="250" y="26"/><use href="#bone" x="270" y="26"/><use href="#bone" x="290" y="26"/><use href="#bone" x="310" y="26"/><use href="#bone" x="330" y="26"/><use href="#bone" x="350" y="26"/><use href="#bone" x="370" y="26"/><use href="#bone" x="390" y="26"/><use href="#bone" x="410" y="26"/><use href="#bone" x="430" y="26"/><use href="#bone" x="450" y="26"/><use href="#bone" x="470" y="26"/><use href="#bone" x="490" y="26"/><use href="#bone" x="510" y="26"/><use href="#bone" x="530" y="26"/><use href="#bone" x="550" y="26"/><use href="#bone" x="570" y="26"/><use href="#bone" x="590" y="26"/><use href="#bone" x="610" y="26"/><use href="#bone" x="630" y="26"/><use href="#bone" x="650" y="26"/><use href="#bone" x="670" y="26"/><use href="#bone" x="690" y="26"/></g></g>
   <rect class="flash" x="0" y="0" width="720" height="150" fill="#00C8FF" fill-opacity="0.18"/>
 </svg>

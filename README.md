@@ -2,6 +2,8 @@
 
 <img src="./assets/header.svg?v=2" width="100%" alt="DEVO" />
 
+<img src="./assets/dialogue.svg?v=8" width="600" alt="* all i need is to win once... * and i can get rid of you, once and for all. * is this really what you want?" />
+
 </div>
 
 ```text
@@ -72,8 +74,6 @@ An UNDERTALE fan game with multiple routes.
 ---
 
 <div align="center">
-
-<img src="./assets/dialogue.svg?v=7" width="600" alt="* all i need is to win once... * and i can get rid of you, once and for all. * is this really what you want?" />
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F0FF,50:003B46,100:0D0D0D&height=110&section=footer" width="100%" />
 
