@@ -21,7 +21,7 @@
 
 ---
 
-### `[ 01 // DOMAINS_&_INTERESTS ]`
+<img src="./assets/sec01.svg?v=1" width="100%" alt="CHECK" />
 
 | DOMAIN | FOCUS_AREAS |
 | :--- | :--- |
@@ -33,7 +33,7 @@
 
 ---
 
-### `[ 02 // ACTIVE_PROCESS ]`
+<img src="./assets/sec02.svg?v=1" width="100%" alt="CURRENT ROUTE" />
 
 <div align="center">
 
@@ -47,7 +47,7 @@ An UNDERTALE fan game with multiple routes.
 
 ---
 
-### `[ 03 // TECH_STACK ]`
+<img src="./assets/sec03.svg?v=1" width="100%" alt="INVENTORY" />
 
 <p>
 <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white" />
@@ -63,7 +63,7 @@ An UNDERTALE fan game with multiple routes.
 
 ---
 
-### `[ 04 // CREATIVE_TOOLS ]`
+<img src="./assets/sec04.svg?v=1" width="100%" alt="ACT" />
 
 <p>
 <img src="https://img.shields.io/badge/Aseprite-1A1A1A?style=for-the-badge&logo=aseprite&logoColor=7D929E" />
@@ -73,7 +73,7 @@ An UNDERTALE fan game with multiple routes.
 
 ---
 
-### `[ 05 // SYSTEM_MONITOR ]`
+<img src="./assets/sec05.svg?v=1" width="100%" alt="STATS" />
 
 <div align="center">
 

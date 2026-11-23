@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="56" viewBox="0 0 800 56">
+  <style>
+    .n { font: 700 34px 'JetBrains Mono','SFMono-Regular',Menlo,Consolas,monospace; fill: #E6FFFF; letter-spacing: 3px; }
+    .k { font: 600 14px 'JetBrains Mono',Menlo,Consolas,monospace; fill: #00F0FF; letter-spacing: 2px; }
+    .s { font: 500 14px 'JetBrains Mono',Menlo,Consolas,monospace; fill: #7FA6A6; letter-spacing: 3px; }
+    .soul { fill: #FF0033; animation: beat 1.6s infinite steps(1); }
+    .gl { fill: #00F0FF; animation: gl 5s infinite steps(1); opacity: 0; }
+    @keyframes beat { 0%,100%{opacity:1} 50%{opacity:.55} 56%{opacity:1} }
+    @keyframes gl { 0%,100%{opacity:0;transform:translateX(0)} 61%{opacity:.7;transform:translateX(-3px)} 63%{opacity:0} }
+  </style>
+  <g class="soul" transform="translate(6,17)"><rect x="3" y="0" width="3" height="3"/><rect x="6" y="0" width="3" height="3"/><rect x="12" y="0" width="3" height="3"/><rect x="15" y="0" width="3" height="3"/><rect x="0" y="3" width="3" height="3"/><rect x="3" y="3" width="3" height="3"/><rect x="6" y="3" width="3" height="3"/><rect x="9" y="3" width="3" height="3"/><rect x="12" y="3" width="3" height="3"/><rect x="15" y="3" width="3" height="3"/><rect x="18" y="3" width="3" height="3"/><rect x="0" y="6" width="3" height="3"/><rect x="3" y="6" width="3" height="3"/><rect x="6" y="6" width="3" height="3"/><rect x="9" y="6" width="3" height="3"/><rect x="12" y="6" width="3" height="3"/><rect x="15" y="6" width="3" height="3"/><rect x="18" y="6" width="3" height="3"/><rect x="0" y="9" width="3" height="3"/><rect x="3" y="9" width="3" height="3"/><rect x="6" y="9" width="3" height="3"/><rect x="9" y="9" width="3" height="3"/><rect x="12" y="9" width="3" height="3"/><rect x="15" y="9" width="3" height="3"/><rect x="18" y="9" width="3" height="3"/><rect x="3" y="12" width="3" height="3"/><rect x="6" y="12" width="3" height="3"/><rect x="9" y="12" width="3" height="3"/><rect x="12" y="12" width="3" height="3"/><rect x="15" y="12" width="3" height="3"/><rect x="6" y="15" width="3" height="3"/><rect x="9" y="15" width="3" height="3"/><rect x="12" y="15" width="3" height="3"/><rect x="9" y="18" width="3" height="3"/></g>
+  <text class="k" x="38" y="34">05</text>
+  <text class="n gl" x="74" y="40">STATS</text>
+  <text class="n" x="74" y="40">STATS</text>
+  <rect x="203" y="28" width="404" height="2" fill="#00F0FF" fill-opacity=".35"/>
+  <text class="s" x="794" y="34" text-anchor="end">github activity</text>
+</svg>
