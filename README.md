@@ -15,31 +15,23 @@
 
 ---
 
-### `[ 01 // ABOUT ]`
-
-Hi, I'm Devo. I study Information Management at National Chengchi University (NCCU), with a minor in Psychology and the Brain Science Program.
-
-I'm interested in where AI, neuroscience and cognitive psychology meet, and how that shows up in the systems and games we build. Outside of class, I make games — currently working on an UNDERTALE fan game.
-
----
-
-### `[ 02 // DOMAINS_&_INTERESTS ]`
+### `[ 01 // DOMAINS_&_INTERESTS ]`
 
 | DOMAIN | FOCUS_AREAS |
 | :--- | :--- |
-| 🧠 **`[ARTIFICIAL_INTELLIGENCE]`** | Machine Learning, Neural Architectures, Intelligent Systems |
-| 🗄️ **`[INFORMATION_SCIENCE]`** | System Architecture, Algorithms, Database Modeling |
-| 🔬 **`[NEUROSCIENCE]`** | Brain Science, Neural Encoding, Computational Cognitive Modeling |
-| 🪞 **`[PSYCHOLOGY]`** | Cognitive Processes, Behavioral Analysis, Human-Computer Interaction |
-| 🎮 **`[GAME_DEVELOPMENT]`** | 2D games now, maybe 3D later, as long as it's fun |
+| **`[ARTIFICIAL_INTELLIGENCE]`** | Machine Learning, Neural Architectures, Intelligent Systems |
+| **`[INFORMATION_SCIENCE]`** | System Architecture, Algorithms, Database Modeling |
+| **`[NEUROSCIENCE]`** | Brain Science, Neural Encoding, Computational Cognitive Modeling |
+| **`[PSYCHOLOGY]`** | Cognitive Processes, Behavioral Analysis, Human-Computer Interaction |
+| **`[GAME_DEVELOPMENT]`** | 2D games now, maybe 3D later, as long as it's fun |
 
 ---
 
-### `[ 03 // ACTIVE_PROCESS ]`
+### `[ 02 // ACTIVE_PROCESS ]`
 
 <div align="center">
 
-### ❤️ [UNDERTALE Harmony](https://github.com/Devotioe/UNDERTALE-Harmony)
+### ❤️ [UNDERTALE: ハーモニ](https://github.com/Devotioe/UNDERTALE-Harmony)
 
 `GameMaker Language` · `IN DEVELOPMENT`
 
@@ -49,7 +41,7 @@ An UNDERTALE fan game with multiple routes.
 
 ---
 
-### `[ 04 // TECH_STACK ]`
+### `[ 03 // TECH_STACK ]`
 
 <p>
 <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white" />
@@ -64,7 +56,7 @@ An UNDERTALE fan game with multiple routes.
 
 ---
 
-### `[ 05 // SYSTEM_MONITOR ]`
+### `[ 04 // SYSTEM_MONITOR ]`
 
 <div align="center">
 
