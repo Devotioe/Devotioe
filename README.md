@@ -73,7 +73,7 @@ An UNDERTALE fan game with multiple routes.
 
 <div align="center">
 
-<img src="./assets/dialogue.svg?v=3" width="600" alt="* The code compiles. * You are filled with DETERMINATION." />
+<img src="./assets/dialogue.svg?v=4" width="600" alt="* The code compiles. * You are filled with DETERMINATION." />
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F0FF,50:003B46,100:0D0D0D&height=110&section=footer" width="100%" />
 
