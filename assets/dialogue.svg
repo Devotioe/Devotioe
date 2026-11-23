@@ -16,7 +16,7 @@
     .flash { animation: flash 16.0s infinite step-end; }
     @keyframes page2 { 0% { opacity: 0; } 61.250% { opacity: 1; } 100% { opacity: 1; } }
     .page2 { animation: page2 16.0s infinite step-end; }
-    @keyframes page1 { 0% { opacity: 1; } 61.250% { opacity: 0; } 100% { opacity: 0; } }
+    @keyframes page1 { 0% { opacity: 1; } 47.500% { opacity: 0; } 100% { opacity: 0; } }
     .page1 { animation: page1 16.0s infinite step-end; }
     @keyframes ty1 { 0% { transform: translateX(0); } 1.875% { transform: translateX(0); animation-timing-function: steps(30, end); } 16.875% { transform: translateX(317px); } 100% { transform: translateX(317px); } }
     .ty1 { animation: ty1 16.0s infinite linear; }
