@@ -2,193 +2,420 @@
   <style>
     .bg { fill: #0D0D0D; }
     .grid { stroke: #00F0FF; stroke-opacity: .06; stroke-width: 1; }
-    .main { fill: #E6FFFF; animation: flick 8s infinite steps(1); }
-    .c { fill: #00F0FF; mix-blend-mode: screen; animation: g1 8s infinite steps(1); }
-    .r { fill: #FF0055; mix-blend-mode: screen; animation: g2 8s infinite steps(1); }
-    .sub { fill: #7FA6A6; animation: subg 8s infinite steps(1); }
+    .main { fill: #E6FFFF; animation: flick 7s infinite steps(1); }
+    .c { fill: #00F0FF; mix-blend-mode: screen; animation: g1 7s infinite steps(1); }
+    .r { fill: #FF0055; mix-blend-mode: screen; animation: g2 7s infinite steps(1); }
+    .gc { fill: #00F0FF; mix-blend-mode: screen; animation: gc 7s infinite steps(1); }
+    .gr { fill: #FF0055; mix-blend-mode: screen; animation: gr 7s infinite steps(1); }
+    .sub { fill: #7FA6A6; animation: subg 7s infinite steps(1); }
+    .subc { fill: #00F0FF; mix-blend-mode: screen; animation: subc 7s infinite steps(1); }
+    .subr { fill: #FF0055; mix-blend-mode: screen; animation: subr 7s infinite steps(1); }
     .cur { fill: #00F0FF; animation: blink 1s infinite steps(1); }
-    .jitter { transform-origin: 400px 90px; transform-box: view-box; animation: jitter 8s infinite steps(1); }
-    .scan { fill: url(#sl); animation: scan 4s linear infinite; }
-    .scanfine { fill: url(#scanlines); animation: scanflick 8s infinite steps(1); pointer-events: none; }
-    .flash { fill: #E6FFFF; animation: flash 8s infinite steps(1); pointer-events: none; }
-    .strobe { fill: url(#strobeGrad); animation: strobe 8s infinite steps(1); pointer-events: none; }
-    .s1 { animation: s1op 8s infinite steps(1); }
-    .s2 { animation: s2op 8s infinite steps(1); }
-    .s3 { animation: s3op 8s infinite steps(1); }
-    .s4 { animation: s4op 8s infinite steps(1); }
-    .s1t { animation: s1t 8s infinite steps(1); }
-    .s2t { animation: s2t 8s infinite steps(1); }
-    .s3t { animation: s3t 8s infinite steps(1); }
-    .s4t { animation: s4t 8s infinite steps(1); }
-    .barA { fill: #00F0FF; animation: barA 8s infinite steps(1); }
-    .barB { fill: #FF0055; animation: barB 8s infinite steps(1); }
-    .barC { fill: #E6FFFF; animation: barC 8s infinite steps(1); }
-    .barD { fill: #0D0D0D; animation: barD 8s infinite steps(1); }
-    .noise { animation: noise 8s infinite steps(1); }
-    .noise2 { animation: noise2 8s infinite steps(1); }
+    .jitter { transform-origin: 400px 90px; transform-box: view-box; animation: jitter 7s infinite steps(1); }
+    .roll { animation: roll 7s infinite steps(1); }
+    .scan { fill: url(#sl); animation: scan 3.2s linear infinite; }
+    .scanfine { fill: url(#scanlines); animation: scanflick 7s infinite steps(1); pointer-events: none; }
+    .flash { fill: #E6FFFF; animation: flash 7s infinite steps(1); pointer-events: none; }
+    .strobe { fill: url(#strobeGrad); animation: strobe 7s infinite steps(1); pointer-events: none; }
+    .s1 { animation: s1op 7s infinite steps(1); }
+    .s2 { animation: s2op 7s infinite steps(1); }
+    .s3 { animation: s3op 7s infinite steps(1); }
+    .s4 { animation: s4op 7s infinite steps(1); }
+    .s5 { animation: s5op 7s infinite steps(1); }
+    .s6 { animation: s6op 7s infinite steps(1); }
+    .ssub { animation: ssubop 7s infinite steps(1); }
+    .s1t { animation: s1t 7s infinite steps(1); }
+    .s2t { animation: s2t 7s infinite steps(1); }
+    .s3t { animation: s3t 7s infinite steps(1); }
+    .s4t { animation: s4t 7s infinite steps(1); }
+    .s5t { animation: s5t 7s infinite steps(1); }
+    .s6t { animation: s6t 7s infinite steps(1); }
+    .ssubt { animation: ssubt 7s infinite steps(1); }
+    .s2g { fill: #00F0FF; mix-blend-mode: screen; animation: s2g 7s infinite steps(1); }
+    .s4g { fill: #FF0055; mix-blend-mode: screen; animation: s4g 7s infinite steps(1); }
+    .barA { fill: #00F0FF; animation: barA 7s infinite steps(1); }
+    .barB { fill: #FF0055; animation: barB 7s infinite steps(1); }
+    .barC { fill: #E6FFFF; animation: barC 7s infinite steps(1); }
+    .barD { fill: #0D0D0D; animation: barD 7s infinite steps(1); }
+    .barE { fill: #00F0FF; animation: barE 7s infinite steps(1); }
+    .barF { fill: #FF0055; animation: barF 7s infinite steps(1); }
+    .barG { fill: #E6FFFF; animation: barG 7s infinite steps(1); }
+    .noise { animation: noise 7s infinite steps(1); }
+    .noise2 { animation: noise2 7s infinite steps(1); }
+    .noise3 { animation: noise3 7s infinite steps(1); }
+    .ftear { animation: ftearop 7s infinite steps(1); }
+    .ftear2 { animation: ftear2op 7s infinite steps(1); }
+    .ftear-shift { animation: fteart 7s infinite steps(1); }
+    .ftear2-shift { animation: ftear2t 7s infinite steps(1); }
 
+    /* ---- RGB: larger, snappier jumps ---- */
     @keyframes g1 {
       0%,100% { transform: translate(0,0); opacity: 0; }
-      10% { transform: translate(-10px,2px); opacity: .95; }
-      11.5% { transform: translate(-6px,-1px); opacity: .85; }
-      13.5% { transform: translate(-14px,1px); opacity: .7; }
-      14.5% { opacity: 0; }
-      35.5% { transform: translate(-8px,1px); opacity: .9; }
-      37% { opacity: 0; }
-      52% { transform: translate(-16px,3px); opacity: 1; }
-      53.5% { transform: translate(-7px,-2px); opacity: .9; }
-      55% { transform: translate(-13px,1px); opacity: .85; }
-      57% { opacity: 0; }
-      78.5% { transform: translate(-9px,2px); opacity: .9; }
-      81% { opacity: 0; }
-      93.5% { transform: translate(-5px,0); opacity: .75; }
-      95.5% { opacity: 0; }
+      8% { transform: translate(-18px,3px); opacity: 1; }
+      10% { transform: translate(-12px,-2px); opacity: .9; }
+      12.5% { transform: translate(-22px,2px); opacity: .85; }
+      14% { opacity: 0; }
+      22% { transform: translate(-16px,1px); opacity: .95; }
+      24.5% { transform: translate(-24px,-2px); opacity: 1; }
+      27% { opacity: 0; }
+      36% { transform: translate(-14px,2px); opacity: .9; }
+      41% { opacity: 0; }
+      50% { transform: translate(-28px,4px); opacity: 1; }
+      53% { transform: translate(-16px,-3px); opacity: .95; }
+      56% { transform: translate(-32px,2px); opacity: 1; }
+      59% { transform: translate(-20px,1px); opacity: .8; }
+      60% { opacity: 0; }
+      70% { transform: translate(-18px,2px); opacity: .95; }
+      73% { transform: translate(-26px,-2px); opacity: 1; }
+      77% { opacity: 0; }
+      86% { transform: translate(-20px,3px); opacity: 1; }
+      89% { transform: translate(-14px,-1px); opacity: .85; }
+      92% { opacity: 0; }
     }
     @keyframes g2 {
       0%,100% { transform: translate(0,0); opacity: 0; }
-      10.5% { transform: translate(11px,-2px); opacity: .95; }
-      12% { transform: translate(6px,1px); opacity: .85; }
-      13.8% { transform: translate(13px,-1px); opacity: .7; }
-      15% { opacity: 0; }
-      35.8% { transform: translate(9px,-1px); opacity: .9; }
-      37.2% { opacity: 0; }
-      52.3% { transform: translate(15px,-3px); opacity: 1; }
-      54% { transform: translate(8px,2px); opacity: .9; }
-      55.5% { transform: translate(12px,-1px); opacity: .85; }
-      57.2% { opacity: 0; }
-      79% { transform: translate(10px,-2px); opacity: .9; }
-      81.3% { opacity: 0; }
-      93.8% { transform: translate(6px,1px); opacity: .75; }
-      96% { opacity: 0; }
+      8.3% { transform: translate(20px,-3px); opacity: 1; }
+      10.3% { transform: translate(12px,2px); opacity: .9; }
+      12.8% { transform: translate(24px,-1px); opacity: .85; }
+      14.2% { opacity: 0; }
+      22.3% { transform: translate(17px,-2px); opacity: .95; }
+      25% { transform: translate(26px,2px); opacity: 1; }
+      27.3% { opacity: 0; }
+      36.4% { transform: translate(16px,-2px); opacity: .9; }
+      41.3% { opacity: 0; }
+      50.4% { transform: translate(30px,-4px); opacity: 1; }
+      53.4% { transform: translate(18px,3px); opacity: .95; }
+      56.4% { transform: translate(34px,-2px); opacity: 1; }
+      59.4% { transform: translate(22px,1px); opacity: .8; }
+      60.3% { opacity: 0; }
+      70.4% { transform: translate(20px,-2px); opacity: .95; }
+      73.5% { transform: translate(28px,2px); opacity: 1; }
+      77.3% { opacity: 0; }
+      86.4% { transform: translate(22px,-3px); opacity: 1; }
+      89.4% { transform: translate(15px,1px); opacity: .85; }
+      92.3% { opacity: 0; }
+    }
+    /* far chromatic ghosts — only the heavier bursts */
+    @keyframes gc {
+      0%,100% { transform: translate(0,0); opacity: 0; }
+      50% { transform: translate(-40px,5px); opacity: .6; }
+      54% { transform: translate(-48px,-3px); opacity: .5; }
+      58% { transform: translate(-36px,2px); opacity: .45; }
+      60% { opacity: 0; }
+      71% { transform: translate(-38px,3px); opacity: .55; }
+      76% { opacity: 0; }
+      87% { transform: translate(-40px,2px); opacity: .5; }
+      91% { opacity: 0; }
+    }
+    @keyframes gr {
+      0%,100% { transform: translate(0,0); opacity: 0; }
+      50.5% { transform: translate(42px,-5px); opacity: .6; }
+      54.5% { transform: translate(50px,3px); opacity: .5; }
+      58.5% { transform: translate(38px,-2px); opacity: .45; }
+      60.3% { opacity: 0; }
+      71.5% { transform: translate(40px,-3px); opacity: .55; }
+      76.3% { opacity: 0; }
+      87.5% { transform: translate(42px,-2px); opacity: .5; }
+      91.3% { opacity: 0; }
     }
     @keyframes flick {
       0%,100% { fill: #E6FFFF; opacity: 1; }
-      10.5% { opacity: .4; }
-      11.5% { opacity: 1; }
-      13% { opacity: .65; }
-      14% { opacity: 1; }
-      35.5% { fill: #FFFFFF; opacity: 1; }
-      36.5% { fill: #E6FFFF; opacity: 1; }
-      52% { fill: #00F0FF; opacity: .45; }
-      53.2% { fill: #E6FFFF; opacity: 1; }
-      54.5% { opacity: .55; }
-      56% { opacity: 1; }
-      78.8% { opacity: .5; }
-      80% { opacity: 1; }
-      93.5% { opacity: .35; }
-      94.8% { opacity: 1; }
+      8.5% { opacity: .35; }
+      9.5% { opacity: 1; }
+      12% { opacity: .55; }
+      13.2% { opacity: 1; }
+      22.5% { opacity: .4; }
+      24% { opacity: 1; }
+      26% { opacity: .6; }
+      27% { opacity: 1; }
+      36.5% { fill: #FFFFFF; opacity: 1; }
+      39% { fill: #E6FFFF; opacity: 1; }
+      40.5% { fill: #FFFFFF; opacity: .85; }
+      41% { fill: #E6FFFF; opacity: 1; }
+      50.5% { fill: #00F0FF; opacity: .4; }
+      52.5% { fill: #E6FFFF; opacity: 1; }
+      55% { opacity: .5; }
+      57% { fill: #00F0FF; opacity: 1; }
+      58.5% { fill: #E6FFFF; opacity: .7; }
+      60% { opacity: 1; }
+      71% { opacity: .4; }
+      73% { opacity: 1; }
+      75.5% { opacity: .55; }
+      77% { opacity: 1; }
+      86.5% { opacity: .35; }
+      88% { opacity: 1; }
+      90.5% { opacity: .5; }
+      92% { opacity: 1; }
     }
     @keyframes jitter {
       0%,100% { transform: translate(0,0) skewX(0deg); }
-      10.5% { transform: translate(3px,-1px) skewX(0deg); }
-      12% { transform: translate(-2px,1px) skewX(-2deg); }
-      13.5% { transform: translate(1px,0) skewX(0deg); }
-      14.5% { transform: translate(0,0) skewX(0deg); }
-      35.5% { transform: translate(-4px,0) skewX(0deg); }
-      37% { transform: translate(0,0) skewX(0deg); }
-      52% { transform: translate(-5px,2px) skewX(-6deg); }
-      53.5% { transform: translate(6px,-1px) skewX(4deg); }
-      55% { transform: translate(-2px,1px) skewX(-2deg); }
-      57% { transform: translate(0,0) skewX(0deg); }
-      78.5% { transform: translate(4px,0) skewX(7deg); }
-      80.5% { transform: translate(0,0) skewX(0deg); }
-      93.8% { transform: translate(-3px,1px) skewX(0deg); }
-      95.5% { transform: translate(0,0) skewX(0deg); }
+      8.5% { transform: translate(6px,-2px) skewX(-4deg); }
+      10.5% { transform: translate(-5px,2px) skewX(5deg); }
+      12.5% { transform: translate(4px,0) skewX(-3deg); }
+      14% { transform: translate(0,0) skewX(0deg); }
+      22.5% { transform: translate(-6px,1px) skewX(6deg); }
+      25% { transform: translate(7px,-2px) skewX(-5deg); }
+      27% { transform: translate(0,0) skewX(0deg); }
+      36.5% { transform: translate(-8px,0) skewX(0deg); }
+      39% { transform: translate(5px,2px) skewX(-4deg); }
+      41% { transform: translate(0,0) skewX(0deg); }
+      50.5% { transform: translate(-12px,3px) skewX(-12deg); }
+      53% { transform: translate(10px,-2px) skewX(10deg); }
+      55.5% { transform: translate(-8px,2px) skewX(-8deg); }
+      58% { transform: translate(6px,-1px) skewX(5deg); }
+      60% { transform: translate(0,0) skewX(0deg); }
+      71% { transform: translate(9px,0) skewX(12deg); }
+      74% { transform: translate(-7px,2px) skewX(-9deg); }
+      77% { transform: translate(0,0) skewX(0deg); }
+      86.5% { transform: translate(-8px,2px) skewX(-7deg); }
+      89% { transform: translate(7px,-1px) skewX(6deg); }
+      92% { transform: translate(0,0) skewX(0deg); }
+    }
+    /* short vertical roll / hitch */
+    @keyframes roll {
+      0%,100% { transform: translate(0,0); }
+      36% { transform: translate(0,16px); }
+      38% { transform: translate(0,-26px); }
+      40% { transform: translate(0,10px); }
+      41% { transform: translate(0,0); }
     }
     @keyframes subg {
-      0%,100% { transform: translate(0,0); opacity: 1; }
-      52.5% { transform: translate(8px,0); opacity: .7; }
-      54% { transform: translate(-4px,0); opacity: 1; }
-      56% { transform: translate(0,0); }
-      79% { transform: translate(-3px,0); }
-      80.5% { transform: translate(0,0); }
+      0%,100% { transform: translate(0,0); opacity: 1; fill: #7FA6A6; }
+      8.5% { transform: translate(8px,0); opacity: .8; }
+      11% { transform: translate(-6px,0); opacity: 1; fill: #00F0FF; }
+      14% { transform: translate(0,0); fill: #7FA6A6; }
+      23% { transform: translate(-8px,0); opacity: .8; }
+      26% { transform: translate(6px,0); opacity: 1; }
+      27% { transform: translate(0,0); }
+      37% { transform: translate(5px,0); opacity: .85; }
+      41% { transform: translate(0,0); opacity: 1; }
+      51% { transform: translate(12px,0); opacity: .7; fill: #00F0FF; }
+      54% { transform: translate(-10px,0); opacity: 1; fill: #7FA6A6; }
+      57% { transform: translate(6px,0); opacity: .8; }
+      60% { transform: translate(0,0); opacity: 1; }
+      71.5% { transform: translate(-8px,0); opacity: .8; fill: #FF0055; }
+      75% { transform: translate(8px,0); fill: #7FA6A6; opacity: 1; }
+      77% { transform: translate(0,0); }
+      87% { transform: translate(10px,0); opacity: .75; }
+      90% { transform: translate(-6px,0); opacity: 1; }
+      92% { transform: translate(0,0); }
     }
+    @keyframes subc {
+      0%,100% { transform: translate(0,0); opacity: 0; }
+      8.5% { transform: translate(-7px,1px); opacity: .75; }
+      14% { opacity: 0; }
+      23% { transform: translate(-8px,0); opacity: .7; }
+      27% { opacity: 0; }
+      51% { transform: translate(-10px,1px); opacity: .8; }
+      55% { transform: translate(-6px,0); opacity: .65; }
+      60% { opacity: 0; }
+      71.5% { transform: translate(-8px,0); opacity: .75; }
+      77% { opacity: 0; }
+      87% { transform: translate(-8px,1px); opacity: .7; }
+      92% { opacity: 0; }
+    }
+    @keyframes subr {
+      0%,100% { transform: translate(0,0); opacity: 0; }
+      9% { transform: translate(7px,-1px); opacity: .75; }
+      14.2% { opacity: 0; }
+      23.5% { transform: translate(8px,0); opacity: .7; }
+      27.2% { opacity: 0; }
+      51.5% { transform: translate(10px,-1px); opacity: .8; }
+      55.5% { transform: translate(6px,0); opacity: .65; }
+      60.2% { opacity: 0; }
+      72% { transform: translate(8px,0); opacity: .75; }
+      77.2% { opacity: 0; }
+      87.5% { transform: translate(8px,-1px); opacity: .7; }
+      92.2% { opacity: 0; }
+    }
+    /* slices: more bands, larger displacement, more often */
     @keyframes s1op {
       0%,100% { opacity: 0; }
-      10.5%,14.2% { opacity: 1; }
-      14.5% { opacity: 0; }
-      52%,56.2% { opacity: 1; }
-      56.5% { opacity: 0; }
-      93.5%,95.2% { opacity: 1; }
-      95.5% { opacity: 0; }
+      8%,13.7% { opacity: 1; }
+      14% { opacity: 0; }
+      22%,26.7% { opacity: 1; }
+      27% { opacity: 0; }
+      50%,59.7% { opacity: 1; }
+      60% { opacity: 0; }
+      70%,76.7% { opacity: 1; }
+      77% { opacity: 0; }
+      86%,91.7% { opacity: 1; }
+      92% { opacity: 0; }
     }
     @keyframes s1t {
       0%,100% { transform: translate(0,0); }
-      10.5% { transform: translate(18px,0); }
-      12.5% { transform: translate(-12px,0); }
-      52% { transform: translate(26px,0); }
-      54% { transform: translate(-16px,0); }
-      93.5% { transform: translate(10px,0); }
+      8% { transform: translate(32px,0); }
+      11% { transform: translate(-24px,0); }
+      22% { transform: translate(-30px,0); }
+      25% { transform: translate(28px,0); }
+      50% { transform: translate(42px,0); }
+      54% { transform: translate(-36px,0); }
+      57% { transform: translate(28px,0); }
+      70% { transform: translate(-34px,0); }
+      74% { transform: translate(30px,0); }
+      86% { transform: translate(36px,0); }
+      89% { transform: translate(-22px,0); }
     }
     @keyframes s2op {
       0%,100% { opacity: 0; }
-      11%,14.5% { opacity: 1; }
-      14.8% { opacity: 0; }
-      52.5%,56.7% { opacity: 1; }
-      57% { opacity: 0; }
-      78.8%,80.7% { opacity: 1; }
-      81% { opacity: 0; }
+      8.5%,13.7% { opacity: 1; }
+      14% { opacity: 0; }
+      50%,59.7% { opacity: 1; }
+      60% { opacity: 0; }
+      70.5%,76.7% { opacity: 1; }
+      77% { opacity: 0; }
     }
     @keyframes s2t {
       0%,100% { transform: translate(0,0); }
-      11% { transform: translate(-22px,0); }
-      13% { transform: translate(14px,0); }
-      52.5% { transform: translate(-28px,0); }
-      54.5% { transform: translate(20px,0); }
-      78.8% { transform: translate(-18px,0); }
+      8.5% { transform: translate(-36px,0); }
+      12% { transform: translate(22px,0); }
+      50% { transform: translate(-44px,0); }
+      54.5% { transform: translate(38px,0); }
+      70.5% { transform: translate(32px,0); }
+      74% { transform: translate(-28px,0); }
+    }
+    @keyframes s2g {
+      0%,100% { transform: translate(0,0); opacity: 0; }
+      9% { transform: translate(-52px,0); opacity: .8; }
+      12.5% { transform: translate(8px,0); opacity: .6; }
+      14% { opacity: 0; }
+      51% { transform: translate(-62px,0); opacity: .85; }
+      55% { transform: translate(20px,0); opacity: .7; }
+      60% { opacity: 0; }
+      72% { transform: translate(-48px,0); opacity: .75; }
+      77% { opacity: 0; }
     }
     @keyframes s3op {
       0%,100% { opacity: 0; }
-      52.2%,55.7% { opacity: 1; }
-      56% { opacity: 0; }
+      22%,26.7% { opacity: 1; }
+      27% { opacity: 0; }
+      50.3%,59.7% { opacity: 1; }
+      60% { opacity: 0; }
+      86%,91.7% { opacity: 1; }
+      92% { opacity: 0; }
     }
     @keyframes s3t {
       0%,100% { transform: translate(0,0); }
-      52.2% { transform: translate(-20px,0); }
-      53.8% { transform: translate(24px,0); }
+      22% { transform: translate(28px,0); }
+      25% { transform: translate(-34px,0); }
+      50.3% { transform: translate(-40px,0); }
+      54% { transform: translate(36px,0); }
+      86% { transform: translate(-30px,0); }
+      89% { transform: translate(26px,0); }
     }
     @keyframes s4op {
       0%,100% { opacity: 0; }
-      52.4%,56.5% { opacity: 1; }
-      56.8% { opacity: 0; }
-      79%,80.7% { opacity: 1; }
-      81% { opacity: 0; }
+      8%,13.7% { opacity: 1; }
+      14% { opacity: 0; }
+      50%,59.7% { opacity: 1; }
+      60% { opacity: 0; }
+      86.5%,91.7% { opacity: 1; }
+      92% { opacity: 0; }
     }
     @keyframes s4t {
       0%,100% { transform: translate(0,0); }
-      52.4% { transform: translate(32px,0); }
-      54.2% { transform: translate(-10px,0); }
-      79% { transform: translate(14px,0); }
+      8% { transform: translate(26px,0); }
+      11.5% { transform: translate(-30px,0); }
+      50% { transform: translate(46px,0); }
+      54% { transform: translate(-22px,0); }
+      86.5% { transform: translate(-32px,0); }
+      89.5% { transform: translate(24px,0); }
+    }
+    @keyframes s4g {
+      0%,100% { transform: translate(0,0); opacity: 0; }
+      9% { transform: translate(48px,0); opacity: .8; }
+      12% { transform: translate(-16px,0); opacity: .6; }
+      14% { opacity: 0; }
+      51% { transform: translate(66px,0); opacity: .85; }
+      55% { transform: translate(-8px,0); opacity: .7; }
+      60% { opacity: 0; }
+    }
+    @keyframes s5op {
+      0%,100% { opacity: 0; }
+      22.5%,26.7% { opacity: 1; }
+      27% { opacity: 0; }
+      50.5%,59.7% { opacity: 1; }
+      60% { opacity: 0; }
+      70%,76.7% { opacity: 1; }
+      77% { opacity: 0; }
+    }
+    @keyframes s5t {
+      0%,100% { transform: translate(0,0); }
+      22.5% { transform: translate(-26px,0); }
+      25.5% { transform: translate(32px,0); }
+      50.5% { transform: translate(38px,0); }
+      55% { transform: translate(-34px,0); }
+      70% { transform: translate(28px,0); }
+      74% { transform: translate(-30px,0); }
+    }
+    @keyframes s6op {
+      0%,100% { opacity: 0; }
+      50.2%,59.5% { opacity: 1; }
+      60% { opacity: 0; }
+      86.2%,91.5% { opacity: 1; }
+      92% { opacity: 0; }
+    }
+    @keyframes s6t {
+      0%,100% { transform: translate(0,0); }
+      50.2% { transform: translate(48px,0); }
+      55% { transform: translate(-28px,0); }
+      86.2% { transform: translate(-40px,0); }
+      89% { transform: translate(22px,0); }
+    }
+    @keyframes ssubop {
+      0%,100% { opacity: 0; }
+      9%,13.5% { opacity: 1; }
+      14% { opacity: 0; }
+      51%,59.5% { opacity: 1; }
+      60% { opacity: 0; }
+      71.5%,76.5% { opacity: 1; }
+      77% { opacity: 0; }
+      87%,91.5% { opacity: 1; }
+      92% { opacity: 0; }
+    }
+    @keyframes ssubt {
+      0%,100% { transform: translate(0,0); }
+      9% { transform: translate(22px,0); }
+      12% { transform: translate(-16px,0); }
+      51% { transform: translate(-28px,0); }
+      55% { transform: translate(24px,0); }
+      71.5% { transform: translate(20px,0); }
+      75% { transform: translate(-18px,0); }
+      87% { transform: translate(-22px,0); }
+      90% { transform: translate(14px,0); }
     }
     @keyframes flash {
       0%,100% { opacity: 0; }
-      35.4% { opacity: .06; }
-      36.2% { opacity: 0; }
-      52.1% { opacity: .05; }
-      52.8% { opacity: 0; }
-      54.2% { opacity: .06; }
-      55% { opacity: 0; }
+      36.4% { opacity: .07; }
+      37.4% { opacity: 0; }
+      39.8% { opacity: .06; }
+      40.8% { opacity: 0; }
+      50.4% { opacity: .06; }
+      51.4% { opacity: 0; }
+      55.6% { opacity: .07; }
+      56.6% { opacity: 0; }
     }
     @keyframes strobe {
       0%,100% { opacity: 0; transform: translateY(0); }
-      35.4% { opacity: .55; transform: translateY(18px); }
-      36.2% { opacity: 0; }
-      52.1% { opacity: .5; transform: translateY(-8px); }
-      52.8% { opacity: 0; }
-      54.2% { opacity: .55; transform: translateY(36px); }
-      55% { opacity: 0; }
+      36.4% { opacity: .55; transform: translateY(14px); }
+      37.6% { opacity: 0; }
+      39.6% { opacity: .5; transform: translateY(40px); }
+      41% { opacity: 0; }
+      50.3% { opacity: .5; transform: translateY(-6px); }
+      51.6% { opacity: 0; }
+      55.4% { opacity: .55; transform: translateY(32px); }
+      57% { opacity: 0; }
     }
     @keyframes scanflick {
       0%,100% { opacity: 0; }
-      10.5%,13.5% { opacity: .32; }
-      35.5% { opacity: .28; }
-      37% { opacity: 0; }
-      52% { opacity: .34; }
-      53.5% { opacity: .16; }
-      55% { opacity: .3; }
-      57% { opacity: 0; }
-      78.5%,80.5% { opacity: .28; }
-      93.5%,95% { opacity: .3; }
+      8%,13.5% { opacity: .36; }
+      22%,26.5% { opacity: .34; }
+      36%,40.5% { opacity: .32; }
+      50%,52.5% { opacity: .4; }
+      53.5% { opacity: .2; }
+      55%,59% { opacity: .38; }
+      70%,76.5% { opacity: .34; }
+      86%,91.5% { opacity: .36; }
     }
     @keyframes scan {
       from { transform: translateY(-60px); }
@@ -200,57 +427,127 @@
     }
     @keyframes barA {
       0%,100% { opacity: 0; }
-      52% { opacity: 1; }
-      53.5% { opacity: 0; }
-      55% { opacity: .85; }
-      56.2% { opacity: 0; }
+      9% { opacity: 1; }
+      11.5% { opacity: 0; }
+      50.5% { opacity: 1; }
+      53% { opacity: 0; }
+      56% { opacity: .9; }
+      58.5% { opacity: 0; }
+      87% { opacity: 1; }
+      90% { opacity: 0; }
     }
     @keyframes barB {
       0%,100% { opacity: 0; }
-      52.4% { opacity: 1; }
+      22.5% { opacity: 1; }
+      25.5% { opacity: 0; }
+      51% { opacity: 1; }
       54% { opacity: 0; }
-      79% { opacity: .9; }
-      80.5% { opacity: 0; }
+      71.5% { opacity: .95; }
+      75% { opacity: 0; }
     }
     @keyframes barC {
       0%,100% { opacity: 0; }
-      11% { opacity: .85; }
+      10% { opacity: .9; }
       12.5% { opacity: 0; }
-      53% { opacity: 1; }
-      54.5% { opacity: 0; }
-      93.8% { opacity: .8; }
-      95% { opacity: 0; }
+      52% { opacity: 1; }
+      55% { opacity: 0; }
+      88% { opacity: .9; }
+      91% { opacity: 0; }
     }
     @keyframes barD {
       0%,100% { opacity: 0; }
-      52.6% { opacity: 1; }
-      54.8% { opacity: 0; }
+      51.5% { opacity: 1; }
+      56% { opacity: 0; }
+    }
+    @keyframes barE {
+      0%,100% { opacity: 0; }
+      23% { opacity: 1; }
+      26% { opacity: 0; }
+      53% { opacity: 1; }
+      57% { opacity: 0; }
+      72% { opacity: .9; }
+      76% { opacity: 0; }
+    }
+    @keyframes barF {
+      0%,100% { opacity: 0; }
+      8.8% { opacity: 1; }
+      12% { opacity: 0; }
+      54% { opacity: 1; }
+      58% { opacity: 0; }
+      87.5% { opacity: 1; }
+      91% { opacity: 0; }
+    }
+    @keyframes barG {
+      0%,100% { opacity: 0; }
+      50.8% { opacity: 1; }
+      53.5% { opacity: 0; }
+      73% { opacity: .85; }
+      76% { opacity: 0; }
     }
     @keyframes noise {
       0%,100% { opacity: 0; }
-      10.8% { opacity: 1; }
-      12% { opacity: 0; }
-      52% { opacity: 1; }
-      53.2% { opacity: 0; }
+      8.5% { opacity: 1; }
+      11% { opacity: 0; }
+      12.2% { opacity: 1; }
+      13.8% { opacity: 0; }
+      50.5% { opacity: 1; }
+      52.5% { opacity: 0; }
       54.5% { opacity: 1; }
-      56% { opacity: 0; }
+      57.5% { opacity: 0; }
+      86.5% { opacity: 1; }
+      89% { opacity: 0; }
     }
     @keyframes noise2 {
       0%,100% { opacity: 0; }
-      35.6% { opacity: 1; }
-      36.8% { opacity: 0; }
-      53.6% { opacity: 1; }
-      55.2% { opacity: 0; }
-      79% { opacity: 1; }
-      80.4% { opacity: 0; }
-      94% { opacity: 1; }
-      95.5% { opacity: 0; }
+      22.5% { opacity: 1; }
+      26% { opacity: 0; }
+      37% { opacity: 1; }
+      40% { opacity: 0; }
+      53% { opacity: 1; }
+      56% { opacity: 0; }
+      71.5% { opacity: 1; }
+      75.5% { opacity: 0; }
+    }
+    @keyframes noise3 {
+      0%,100% { opacity: 0; }
+      10% { opacity: 1; }
+      13% { opacity: 0; }
+      51.5% { opacity: 1; }
+      55% { opacity: 0; }
+      57.5% { opacity: 1; }
+      59.5% { opacity: 0; }
+      88% { opacity: 1; }
+      91.5% { opacity: 0; }
+    }
+    @keyframes ftearop {
+      0%,100% { opacity: 0; }
+      50.5%,58.5% { opacity: 1; }
+      60% { opacity: 0; }
+      86.5%,90.5% { opacity: 1; }
+      92% { opacity: 0; }
+    }
+    @keyframes fteart {
+      0%,100% { transform: translate(0,0); }
+      50.5% { transform: translate(40px,0); }
+      54.5% { transform: translate(-32px,0); }
+      86.5% { transform: translate(-36px,0); }
+      89% { transform: translate(24px,0); }
+    }
+    @keyframes ftear2op {
+      0%,100% { opacity: 0; }
+      52.5%,57.5% { opacity: 1; }
+      59% { opacity: 0; }
+    }
+    @keyframes ftear2t {
+      0%,100% { transform: translate(0,0); }
+      52.5% { transform: translate(-44px,0); }
+      55.5% { transform: translate(28px,0); }
     }
   </style>
   <defs>
     <linearGradient id="sl" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#00F0FF" stop-opacity="0"/>
-      <stop offset=".5" stop-color="#00F0FF" stop-opacity=".18"/>
+      <stop offset=".5" stop-color="#00F0FF" stop-opacity=".2"/>
       <stop offset="1" stop-color="#00F0FF" stop-opacity="0"/>
     </linearGradient>
     <pattern id="g" width="24" height="24" patternUnits="userSpaceOnUse">
@@ -267,75 +564,140 @@
     <clipPath id="frame">
       <rect width="800" height="200" rx="12"/>
     </clipPath>
-    <clipPath id="clip1"><rect x="0" y="66" width="800" height="9"/></clipPath>
-    <clipPath id="clip2"><rect x="0" y="82" width="800" height="7"/></clipPath>
-    <clipPath id="clip3"><rect x="0" y="96" width="800" height="12"/></clipPath>
-    <clipPath id="clip4"><rect x="0" y="74" width="800" height="5"/></clipPath>
+    <clipPath id="clip1"><rect x="0" y="60" width="800" height="8"/></clipPath>
+    <clipPath id="clip2"><rect x="0" y="70" width="800" height="7"/></clipPath>
+    <clipPath id="clip3"><rect x="0" y="84" width="800" height="10"/></clipPath>
+    <clipPath id="clip4"><rect x="0" y="96" width="800" height="8"/></clipPath>
+    <clipPath id="clip5"><rect x="0" y="106" width="800" height="7"/></clipPath>
+    <clipPath id="clip6"><rect x="0" y="80" width="800" height="9"/></clipPath>
+    <clipPath id="clipsub"><rect x="0" y="141" width="800" height="12"/></clipPath>
+    <clipPath id="ftearclip"><rect x="0" y="8" width="800" height="28"/></clipPath>
+    <clipPath id="ftear2clip"><rect x="0" y="124" width="800" height="16"/></clipPath>
     <path id="devo" d="M310.00247412109377 112.0V59.440000000000005H325.63231005859376Q330.95491796875 59.440000000000005 334.87352587890626 61.4682431640625Q338.7921337890625 63.496486328125 340.97049853515625 67.17191186523438Q343.14886328125004 70.84733740234375 343.14886328125004 75.83982373046875V95.52817626953126Q343.14886328125004 100.478541015625 340.97049853515625 104.18996655273438Q338.7921337890625 107.90139208984375 334.87352587890626 109.95069604492187Q330.95491796875 112.0 325.63231005859376 112.0ZM319.0097690429688 103.712705078125H325.63231005859376Q329.54187841796875 103.712705078125 331.8417233886719 101.51204248046875Q334.141568359375 99.3113798828125 334.141568359375 95.52817626953126V75.83982373046875Q334.141568359375 72.1286201171875 331.8417233886719 69.92795751953125Q329.54187841796875 67.727294921875 325.63231005859376 67.727294921875H319.0097690429688Z M360.15756835937503 112.0V59.440000000000005H391.6612158203125V67.2815927734375H369.0086201171875V80.9420546875H389.1412158203125V88.75376904296876H369.0086201171875V104.1584072265625H391.6612158203125V112.0Z M418.788109375 112.0 405.5469604492188 59.440000000000005H414.85449853515627L422.8137021484375 93.67774462890625Q423.4127294921875 96.24234033203125 423.9975471191406 99.13042846679687Q424.58236474609373 102.0185166015625 424.87036474609374 103.80088134765626Q425.15836474609375 102.0185166015625 425.66506079101566 99.13042846679687Q426.1717568359375 96.24234033203125 426.7707841796875 93.635623046875L434.57374462890624 59.440000000000005H443.6530395507813L430.4662553710937 112.0Z M473.8 112.72Q468.75314892578126 112.72 465.0593586425781 110.81469604492187Q461.365568359375 108.90939208984375 459.36108203125 105.40514892578125Q457.356595703125 101.90090576171875 457.356595703125 97.1787841796875V74.2612158203125Q457.356595703125 69.5092158203125 459.36108203125 66.01991186523438Q461.365568359375 62.530607910156256 465.0593586425781 60.62530395507813Q468.75314892578126 58.720000000000006 473.8 58.720000000000006Q478.88897265624996 58.720000000000006 482.56170214843746 60.62530395507813Q486.23443164062496 62.530607910156256 488.23891796875 66.01991186523438Q490.243404296875 69.5092158203125 490.243404296875 74.23133740234375V97.1787841796875Q490.243404296875 101.90090576171875 488.23891796875 105.40514892578125Q486.23443164062496 108.90939208984375 482.56170214843746 110.81469604492187Q478.88897265624996 112.72 473.8 112.72ZM473.8 104.82404248046875Q477.45829785156246 104.82404248046875 479.34720361328124 102.83325830078124Q481.236109375 100.84247412109374 481.236109375 97.1787841796875V74.2612158203125Q481.236109375 70.555404296875 479.36826440429684 68.58568090820313Q477.5004194335937 66.61595751953125 473.8 66.61595751953125Q470.129458984375 66.61595751953125 468.2466748046875 68.58568090820313Q466.363890625 70.555404296875 466.363890625 74.2612158203125V97.1787841796875Q466.363890625 100.84247412109374 468.26773559570313 102.83325830078124Q470.17158056640625 104.82404248046875 473.8 104.82404248046875Z"/>
     <path id="sub" d="M208.21500549316406 152.0V141.05H210.2624954223633L213.45450164794923 150.15501098632814Q213.4200018310547 149.72601318359375 213.37575210571288 149.12451538085938Q213.3315023803711 148.523017578125 213.30450256347655 147.87951904296875Q213.27750274658203 147.2360205078125 213.27750274658203 146.70502014160155V141.05H214.78499450683594V152.0H212.7375045776367L209.56499816894532 142.89498901367188Q209.59949798583983 143.29098754882813 209.63399780273437 143.87223617553713Q209.6684976196289 144.4534848022461 209.69549743652345 145.08123397827148Q209.72249725341797 145.70898315429687 209.72249725341797 146.2549835205078V152.0Z M224.56224990844726 152.15Q223.5385012817383 152.15 222.78175247192382 151.76375045776368Q222.02500366210938 151.37750091552735 221.60950439453126 150.65600128173827Q221.19400512695313 149.93450164794922 221.19400512695313 148.9550018310547V144.09499816894532Q221.19400512695313 143.10049835205078 221.60950439453126 142.38649871826172Q222.02500366210938 141.67249908447266 222.78175247192382 141.28624954223633Q223.5385012817383 140.9 224.56224990844726 140.9Q225.58599853515625 140.9 226.3352473449707 141.29149963378904Q227.08449615478514 141.6829992675781 227.49474533081053 142.39598007490048Q227.90499450683595 143.10896088222287 227.90499450683595 144.09499816894532H226.28500549316405Q226.28500549316405 143.24599487304687 225.83266799676613 142.79074295043944Q225.38033050036822 142.33549102783203 224.55916396844583 142.33549102783203Q223.73799743652344 142.33549102783203 223.27599578857422 142.7864068841934Q222.813994140625 143.23732274055482 222.813994140625 144.08449798583985V148.9550018310547Q222.813994140625 149.80065642600835 223.27599578857422 150.25758269908818Q223.73799743652344 150.71450897216798 224.55916396844583 150.71450897216798Q225.38033050036822 150.71450897216798 225.83266799676613 150.25758269908818Q226.28500549316405 149.80065642600835 226.28500549316405 148.9550018310547H227.90499450683595Q227.90499450683595 149.92400146484374 227.49474533081053 150.6455010986328Q227.08449615478514 151.36700073242187 226.3352473449707 151.75850036621094Q225.58599853515625 152.15 224.56224990844726 152.15Z M237.56224990844726 152.15Q236.5385012817383 152.15 235.78175247192382 151.76375045776368Q235.02500366210938 151.37750091552735 234.60950439453126 150.65600128173827Q234.19400512695313 149.93450164794922 234.19400512695313 148.9550018310547V144.09499816894532Q234.19400512695313 143.10049835205078 234.60950439453126 142.38649871826172Q235.02500366210938 141.67249908447266 235.78175247192382 141.28624954223633Q236.5385012817383 140.9 237.56224990844726 140.9Q238.58599853515625 140.9 239.3352473449707 141.29149963378904Q240.08449615478514 141.6829992675781 240.49474533081053 142.39598007490048Q240.90499450683595 143.10896088222287 240.90499450683595 144.09499816894532H239.28500549316405Q239.28500549316405 143.24599487304687 238.83266799676613 142.79074295043944Q238.38033050036822 142.33549102783203 237.55916396844583 142.33549102783203Q236.73799743652344 142.33549102783203 236.27599578857422 142.7864068841934Q235.813994140625 143.23732274055482 235.813994140625 144.08449798583985V148.9550018310547Q235.813994140625 149.80065642600835 236.27599578857422 150.25758269908818Q236.73799743652344 150.71450897216798 237.55916396844583 150.71450897216798Q238.38033050036822 150.71450897216798 238.83266799676613 150.25758269908818Q239.28500549316405 149.80065642600835 239.28500549316405 148.9550018310547H240.90499450683595Q240.90499450683595 149.92400146484374 240.49474533081053 150.6455010986328Q240.08449615478514 151.36700073242187 239.3352473449707 151.75850036621094Q238.58599853515625 152.15 237.56224990844726 152.15Z M250.5 152.15Q248.92950164794922 152.15 248.07225357055665 151.28675064086914Q247.21500549316406 150.42350128173828 247.21500549316406 148.93700256347657V141.05H248.83499450683593V148.93250274658203Q248.83499450683593 149.7695053100586 249.25049560546876 150.24725723266602Q249.66599670410156 150.72500915527343 250.5 150.72500915527343Q251.31900329589843 150.72500915527343 251.74200439453125 150.24725723266602Q252.16500549316407 149.7695053100586 252.16500549316407 148.93250274658203V141.05H253.78499450683594V148.93700256347657Q253.78499450683594 150.42950164794922 252.93299652099608 151.2897508239746Q252.08099853515625 152.15 250.5 152.15Z M272.98700622558596 152.0V141.05H274.986496887207L276.08599853515625 144.5630010986328Q276.25099853515627 145.06100036621095 276.37024917602537 145.51325119018554Q276.4894998168945 145.96550201416017 276.53600036621094 146.19350311279297Q276.59300109863284 145.96550201416017 276.7017515563965 145.51325119018554Q276.81050201416014 145.06100036621095 276.96050201416017 144.55250091552733L278.013503112793 141.05H280.01299377441404V152.0H278.47250274658205V148.31748809814454Q278.47250274658205 147.6079901123047 278.51525283813476 146.74774093627929Q278.5580029296875 145.8874917602539 278.62850311279294 145.0032420349121Q278.6990032958984 144.1189923095703 278.77925338745115 143.32099212646483Q278.85950347900393 142.5229919433594 278.9195034790039 141.9274917602539L277.302497253418 147.2449981689453H275.73350311279296L274.08799743652344 141.9274917602539Q274.1629974365234 142.50349212646483 274.2379974365234 143.27599212646484Q274.31299743652346 144.04849212646485 274.3752473449707 144.9199917602539Q274.437497253418 145.79149139404296 274.48249725341793 146.66899047851564Q274.52749725341795 147.54648956298828 274.52749725341795 148.31748809814454V152.0Z M286.4625045776367 152.0V150.5540087890625H288.6795053100586V142.4959912109375H286.4625045776367V141.05H292.5374954223633V142.4959912109375H290.3204946899414V150.5540087890625H292.5374954223633V152.0Z M302.54200073242185 152.15Q301.4395016479492 152.15 300.6422526550293 151.78100036621095Q299.8450036621094 151.4120007324219 299.4115042114258 150.72800109863283Q298.9780047607422 150.04400146484375 298.9675045776367 149.1050018310547H300.5874935913086Q300.5874935913086 149.84900512695313 301.10949523925785 150.28175704956055Q301.63149688720705 150.71450897216798 302.5555001831055 150.71450897216798Q303.42850311279295 150.71450897216798 303.9205047607422 150.2945071411133Q304.4125064086914 149.8745053100586 304.4125064086914 149.13050201416016Q304.4125064086914 148.52449981689452 304.0757557678223 148.07449798583986Q303.73900512695315 147.62449615478516 303.11500366210936 147.45199523925783L301.7424990844727 147.04999267578125Q300.5365023803711 146.7094924926758 299.87950439453124 145.87474349975588Q299.2225064086914 145.03999450683594 299.2225064086914 143.88649688720704Q299.2225064086914 142.97899780273437 299.63350585937496 142.30849853515625Q300.0445053100586 141.63799926757812 300.7915042114258 141.26374954223633Q301.53850311279297 140.88949981689453 302.55400146484374 140.88949981689453Q304.06599853515627 140.88949981689453 304.96974716186526 141.70099945068358Q305.87349578857425 142.51249908447267 305.88399597167967 143.8699981689453H304.2640069580078Q304.2640069580078 143.14549468994142 303.81250549316405 142.735242767334Q303.36100402832034 142.32499084472656 302.53450164794924 142.32499084472656Q301.7319989013672 142.32499084472656 301.28724716186525 142.70674240112305Q300.8424954223633 143.08849395751952 300.8424954223633 143.7754965209961Q300.8424954223633 144.39199890136717 301.17774642944335 144.8397508239746Q301.51299743652345 145.28750274658202 302.1384994506836 145.47050384521484L303.5395034790039 145.8875064086914Q304.7424990844727 146.22800659179688 305.387497253418 147.0642561340332Q306.0324954223633 147.90050567626952 306.0324954223633 149.0780029296875Q306.0324954223633 149.99600219726562 305.59674606323244 150.68900146484376Q305.16099670410154 151.3820007324219 304.3764978027343 151.76600036621096Q303.59199890136716 152.15 302.54200073242185 152.15Z M328.5 148.13599853515626Q327.89400146484377 148.13599853515626 327.53400238037113 147.78124954223634Q327.17400329589844 147.42650054931642 327.17400329589844 146.83100219726563Q327.17400329589844 146.2100036621094 327.53400238037113 145.84700439453127Q327.89400146484377 145.48400512695312 328.5 145.48400512695312Q329.1104983520508 145.48400512695312 329.4682475280762 145.84700439453127Q329.82599670410156 146.2100036621094 329.82599670410156 146.83100219726563Q329.82599670410156 147.42650054931642 329.4682475280762 147.78124954223634Q329.1104983520508 148.13599853515626 328.5 148.13599853515626Z M351.2630047607422 152.0V141.05H354.85100219726564Q355.91150054931643 141.05 356.6948862875662 141.4579039390615Q357.4782720258159 141.86580787812304 357.90913418185323 142.604652748876Q358.3399963378906 143.34349761962892 358.3399963378906 144.35163428619617Q358.3399963378906 145.34449615478516 357.90724716186526 146.0899954223633Q357.47449798583983 146.8354946899414 356.69369566781177 147.24424423217772Q355.91289334978376 147.65299377441406 354.85100219726564 147.65299377441406H352.88299377441405V152.0ZM352.88299377441405 146.19500366210937H354.85100219726564Q355.68494658250074 146.19500366210937 356.1867266787016 145.69285442864717Q356.68850677490235 145.19070519518496 356.68850677490235 144.35149688720702Q356.68850677490235 143.5024935913086 356.1867266787016 143.00524185180666Q355.68494658250074 142.5079901123047 354.85100219726564 142.5079901123047H352.88299377441405Z M367.54200073242185 152.15Q366.4395016479492 152.15 365.6422526550293 151.78100036621095Q364.8450036621094 151.4120007324219 364.4115042114258 150.72800109863283Q363.9780047607422 150.04400146484375 363.9675045776367 149.1050018310547H365.5874935913086Q365.5874935913086 149.84900512695313 366.10949523925785 150.28175704956055Q366.63149688720705 150.71450897216798 367.5555001831055 150.71450897216798Q368.42850311279295 150.71450897216798 368.9205047607422 150.2945071411133Q369.4125064086914 149.8745053100586 369.4125064086914 149.13050201416016Q369.4125064086914 148.52449981689452 369.0757557678223 148.07449798583986Q368.73900512695315 147.62449615478516 368.11500366210936 147.45199523925783L366.7424990844727 147.04999267578125Q365.5365023803711 146.7094924926758 364.87950439453124 145.87474349975588Q364.2225064086914 145.03999450683594 364.2225064086914 143.88649688720704Q364.2225064086914 142.97899780273437 364.63350585937496 142.30849853515625Q365.0445053100586 141.63799926757812 365.7915042114258 141.26374954223633Q366.53850311279297 140.88949981689453 367.55400146484374 140.88949981689453Q369.06599853515627 140.88949981689453 369.96974716186526 141.70099945068358Q370.87349578857425 142.51249908447267 370.88399597167967 143.8699981689453H369.2640069580078Q369.2640069580078 143.14549468994142 368.81250549316405 142.735242767334Q368.36100402832034 142.32499084472656 367.53450164794924 142.32499084472656Q366.7319989013672 142.32499084472656 366.28724716186525 142.70674240112305Q365.8424954223633 143.08849395751952 365.8424954223633 143.7754965209961Q365.8424954223633 144.39199890136717 366.17774642944335 144.8397508239746Q366.51299743652345 145.28750274658202 367.1384994506836 145.47050384521484L368.5395034790039 145.8875064086914Q369.7424990844727 146.22800659179688 370.387497253418 147.0642561340332Q371.0324954223633 147.90050567626952 371.0324954223633 149.0780029296875Q371.0324954223633 149.99600219726562 370.59674606323244 150.68900146484376Q370.16099670410154 151.3820007324219 369.3764978027343 151.76600036621096Q368.59199890136716 152.15 367.54200073242185 152.15Z M379.69000549316405 152.0V147.9634976196289L376.43500366210935 141.05H378.11799194335936L380.0545016479492 145.1900146484375Q380.2435012817383 145.60101318359375 380.36425064086916 145.9512596130371Q380.485 146.30150604248047 380.52399963378906 146.48900329589844Q380.5674990844727 146.30150604248047 380.6889987182617 145.9512596130371Q380.8104983520508 145.60101318359375 380.9949981689453 145.1900146484375L382.88650787353515 141.05H384.56499633789065L381.30999450683595 147.9634976196289V152.0Z M406.5 148.13599853515626Q405.89400146484377 148.13599853515626 405.53400238037113 147.78124954223634Q405.17400329589844 147.42650054931642 405.17400329589844 146.83100219726563Q405.17400329589844 146.2100036621094 405.53400238037113 145.84700439453127Q405.89400146484377 145.48400512695312 406.5 145.48400512695312Q407.1104983520508 145.48400512695312 407.4682475280762 145.84700439453127Q407.82599670410156 146.2100036621094 407.82599670410156 146.83100219726563Q407.82599670410156 147.42650054931642 407.4682475280762 147.78124954223634Q407.1104983520508 148.13599853515626 406.5 148.13599853515626Z M429.2150054931641 152.0V141.05H431.26249542236326L434.4545016479492 150.15501098632814Q434.42000183105466 149.72601318359375 434.3757521057129 149.12451538085938Q434.3315023803711 148.523017578125 434.3045025634766 147.87951904296875Q434.27750274658206 147.2360205078125 434.27750274658206 146.70502014160155V141.05H435.7849945068359V152.0H433.73750457763674L430.5649981689453 142.89498901367188Q430.59949798583983 143.29098754882813 430.63399780273437 143.87223617553713Q430.6684976196289 144.4534848022461 430.6954974365234 145.08123397827148Q430.72249725341794 145.70898315429687 430.72249725341794 146.2549835205078V152.0Z M442.4625045776367 152.0V150.5540087890625H444.6795053100586V142.4959912109375H442.4625045776367V141.05H448.5374954223633V142.4959912109375H446.3204946899414V150.5540087890625H448.5374954223633V152.0Z M471.5 148.13599853515626Q470.89400146484377 148.13599853515626 470.53400238037113 147.78124954223634Q470.17400329589844 147.42650054931642 470.17400329589844 146.83100219726563Q470.17400329589844 146.2100036621094 470.53400238037113 145.84700439453127Q470.89400146484377 145.48400512695312 471.5 145.48400512695312Q472.1104983520508 145.48400512695312 472.4682475280762 145.84700439453127Q472.82599670410156 146.2100036621094 472.82599670410156 146.83100219726563Q472.82599670410156 147.42650054931642 472.4682475280762 147.78124954223634Q472.1104983520508 148.13599853515626 471.5 148.13599853515626Z M497.56224990844726 152.15Q496.53850128173826 152.15 495.7817524719238 151.76375045776368Q495.0250036621094 151.37750091552735 494.60950439453126 150.65600128173827Q494.19400512695313 149.93450164794922 494.19400512695313 148.9550018310547V144.09499816894532Q494.19400512695313 143.10049835205078 494.60950439453126 142.38649871826172Q495.0250036621094 141.67249908447266 495.7817524719238 141.28624954223633Q496.53850128173826 140.9 497.56224990844726 140.9Q498.58599853515625 140.9 499.3352473449707 141.29149963378904Q500.08449615478514 141.6829992675781 500.49474533081053 142.39598007490048Q500.9049945068359 143.10896088222287 500.9049945068359 144.09499816894532H499.2850054931641Q499.2850054931641 143.24599487304687 498.83266799676613 142.79074295043944Q498.3803305003682 142.33549102783203 497.55916396844583 142.33549102783203Q496.7379974365234 142.33549102783203 496.2759957885742 142.7864068841934Q495.813994140625 143.23732274055482 495.813994140625 144.08449798583985V148.9550018310547Q495.813994140625 149.7991591702975 496.2759957885742 150.26208416278547Q496.7379974365234 150.72500915527343 497.55916396844583 150.72500915527343Q498.3803305003682 150.72500915527343 498.83266799676613 150.26160271384498Q499.2850054931641 149.79819627241656 499.2850054931641 148.95316099687057V147.72649688720702H497.2449981689453V146.29400512695312H500.9049945068359V148.9550018310547Q500.9049945068359 149.925869313366 500.49474533081053 150.64643502289394Q500.08449615478514 151.36700073242187 499.3352473449707 151.75850036621094Q498.58599853515625 152.15 497.56224990844726 152.15Z M506.6375045776367 152.0 509.43800659179686 141.05H511.56349395751954L514.3624954223633 152.0H512.7185067749024L512.0570043945313 149.2204946899414H508.95349578857423L508.2919934082031 152.0ZM509.25499450683594 147.88250274658202H511.74050567626955L510.9950018310547 144.72799377441407Q510.79550018310545 143.88498901367188 510.6672499084473 143.2647380065918Q510.53899963378905 142.6444869995117 510.5 142.41348846435548Q510.46100036621095 142.6444869995117 510.33724990844723 143.26248809814453Q510.21349945068357 143.88048919677735 510.00949798583986 144.71299377441406Z M519.9870062255859 152.0V141.05H521.9864968872071L523.0859985351562 144.5630010986328Q523.2509985351562 145.06100036621095 523.3702491760254 145.51325119018554Q523.4894998168945 145.96550201416017 523.5360003662109 146.19350311279297Q523.5930010986328 145.96550201416017 523.7017515563965 145.51325119018554Q523.8105020141602 145.06100036621095 523.9605020141602 144.55250091552733L525.0135031127929 141.05H527.0129937744141V152.0H525.472502746582V148.31748809814454Q525.472502746582 147.6079901123047 525.5152528381348 146.74774093627929Q525.5580029296875 145.8874917602539 525.6285031127929 145.0032420349121Q525.6990032958985 144.1189923095703 525.7792533874513 143.32099212646483Q525.8595034790039 142.5229919433594 525.9195034790039 141.9274917602539L524.302497253418 147.2449981689453H522.733503112793L521.0879974365234 141.9274917602539Q521.1629974365235 142.50349212646483 521.2379974365235 143.27599212646484Q521.3129974365235 144.04849212646485 521.3752473449707 144.9199917602539Q521.437497253418 145.79149139404296 521.4824972534179 146.66899047851564Q521.527497253418 147.54648956298828 521.527497253418 148.31748809814454V152.0Z M533.4100036621094 152.0V141.05H539.8449981689453V142.48699157714844H535.0059930419922V145.5980029296875H539.3199981689453V147.02449432373047H535.0059930419922V150.56300842285157H539.8449981689453V152.0Z M559.2495053100586 152.0V141.05H562.3004965209961Q563.3879956054687 141.05 564.1829946899413 141.46399963378906Q564.977993774414 141.87799926757813 565.4189932250977 142.62874862670898Q565.8599926757812 143.37949798583983 565.8599926757812 144.40249725341798V148.63250274658202Q565.8599926757812 149.65100219726563 565.4189932250977 150.4092515563965Q564.977993774414 151.16750091552734 564.1829946899413 151.58375045776367Q563.3879956054687 152.0 562.3004965209961 152.0ZM560.8694943237305 150.53001098632814H562.3004965209961Q563.2005001831054 150.53001098632814 563.7202519226074 150.02450897216798Q564.2400036621094 149.51900695800782 564.2400036621094 148.63250274658202V144.40249725341798Q564.2400036621094 143.5309930419922 563.7202519226074 143.02549102783203Q563.2005001831054 142.51998901367188 562.3004965209961 142.51998901367188H560.8694943237305Z M572.4100036621094 152.0V141.05H578.8449981689453V142.48699157714844H574.0059930419922V145.5980029296875H578.3199981689453V147.02449432373047H574.0059930419922V150.56300842285157H578.8449981689453V152.0Z M587.426005859375 152.0 584.6375045776367 141.05H586.3114932250977L588.0679974365235 148.33250640869142Q588.2269989013672 148.98651153564452 588.3552491760254 149.62026290893556Q588.4834994506836 150.25401428222656 588.5434994506836 150.61251373291014Q588.6034994506836 150.25401428222656 588.7197499084473 149.62026290893556Q588.8360003662109 148.98651153564452 588.9950018310547 148.32800659179688L590.7275064086914 141.05H592.3624954223633L589.5724935913086 152.0Z"/>
   </defs>
 
   <rect class="bg" width="800" height="200" rx="12"/>
   <g clip-path="url(#frame)">
-    <rect width="800" height="200" fill="url(#g)"/>
-    <rect class="strobe" x="0" y="70" width="800" height="16"/>
+    <g class="roll">
+      <rect width="800" height="200" fill="url(#g)"/>
+      <rect class="strobe" x="0" y="70" width="800" height="16"/>
 
-    <g class="jitter">
-      <use href="#devo" xlink:href="#devo" class="c"/>
-      <use href="#devo" xlink:href="#devo" class="r"/>
-      <use href="#devo" xlink:href="#devo" class="main"/>
-      <use href="#sub" xlink:href="#sub" class="sub"/>
-      <rect class="cur" x="612" y="140" width="10" height="16"/>
+      <g class="jitter">
+        <use href="#devo" xlink:href="#devo" class="gc"/>
+        <use href="#devo" xlink:href="#devo" class="gr"/>
+        <use href="#devo" xlink:href="#devo" class="c"/>
+        <use href="#devo" xlink:href="#devo" class="r"/>
+        <use href="#devo" xlink:href="#devo" class="main"/>
+        <use href="#sub" xlink:href="#sub" class="subc"/>
+        <use href="#sub" xlink:href="#sub" class="subr"/>
+        <use href="#sub" xlink:href="#sub" class="sub"/>
+        <rect class="cur" x="612" y="140" width="10" height="16"/>
 
-      <!-- slice tears: cover stays put to hide the original band; only the clipped copy shifts -->
-      <g class="s1">
-        <rect x="286" y="66" width="228" height="9" fill="#0D0D0D"/>
-        <g clip-path="url(#clip1)">
-          <use href="#devo" xlink:href="#devo" class="s1t" fill="#E6FFFF"/>
+        <g class="s1">
+          <rect x="248" y="60" width="314" height="8" fill="#0D0D0D"/>
+          <g clip-path="url(#clip1)">
+            <use href="#devo" xlink:href="#devo" class="s1t" fill="#E6FFFF"/>
+          </g>
+        </g>
+        <g class="s2">
+          <rect x="248" y="70" width="314" height="7" fill="#0D0D0D"/>
+          <g clip-path="url(#clip2)">
+            <use href="#devo" xlink:href="#devo" class="s2t" fill="#E6FFFF"/>
+            <use href="#devo" xlink:href="#devo" class="s2g"/>
+          </g>
+        </g>
+        <g class="s3">
+          <rect x="248" y="84" width="314" height="10" fill="#0D0D0D"/>
+          <g clip-path="url(#clip3)">
+            <use href="#devo" xlink:href="#devo" class="s3t" fill="#E6FFFF"/>
+          </g>
+        </g>
+        <g class="s4">
+          <rect x="248" y="96" width="314" height="8" fill="#0D0D0D"/>
+          <g clip-path="url(#clip4)">
+            <use href="#devo" xlink:href="#devo" class="s4t" fill="#E6FFFF"/>
+            <use href="#devo" xlink:href="#devo" class="s4g"/>
+          </g>
+        </g>
+        <g class="s5">
+          <rect x="248" y="106" width="314" height="7" fill="#0D0D0D"/>
+          <g clip-path="url(#clip5)">
+            <use href="#devo" xlink:href="#devo" class="s5t" fill="#E6FFFF"/>
+          </g>
+        </g>
+        <g class="s6">
+          <rect x="0" y="80" width="800" height="9" fill="#0D0D0D"/>
+          <g clip-path="url(#clip6)">
+            <use href="#devo" xlink:href="#devo" class="s6t" fill="#E6FFFF"/>
+          </g>
+        </g>
+        <g class="ssub">
+          <rect x="200" y="141" width="396" height="12" fill="#0D0D0D"/>
+          <g clip-path="url(#clipsub)">
+            <use href="#sub" xlink:href="#sub" class="ssubt" fill="#7FA6A6"/>
+          </g>
         </g>
       </g>
-      <g class="s2">
-        <rect x="286" y="82" width="228" height="7" fill="#0D0D0D"/>
-        <g clip-path="url(#clip2)">
-          <use href="#devo" xlink:href="#devo" class="s2t" fill="#E6FFFF"/>
-        </g>
-      </g>
-      <g class="s3">
-        <rect x="286" y="96" width="228" height="12" fill="#0D0D0D"/>
-        <g clip-path="url(#clip3)">
-          <use href="#devo" xlink:href="#devo" class="s3t" fill="#E6FFFF"/>
-        </g>
-      </g>
-      <g class="s4">
-        <rect x="0" y="74" width="800" height="5" fill="#0D0D0D"/>
-        <g clip-path="url(#clip4)">
-          <use href="#devo" xlink:href="#devo" class="s4t" fill="#E6FFFF"/>
-        </g>
-      </g>
-    </g>
 
-    <!-- corrupted bars -->
-    <rect class="barA" x="240" y="88" width="190" height="3"/>
-    <rect class="barB" x="430" y="71" width="130" height="3"/>
-    <rect class="barC" x="310" y="108" width="70" height="2"/>
-    <rect class="barD" x="355" y="78" width="90" height="6"/>
+      <rect class="barA" x="220" y="86" width="230" height="4"/>
+      <rect class="barB" x="410" y="66" width="170" height="4"/>
+      <rect class="barC" x="300" y="108" width="110" height="3"/>
+      <rect class="barD" x="330" y="74" width="140" height="8"/>
+      <rect class="barE" x="180" y="98" width="90" height="3"/>
+      <rect class="barF" x="500" y="90" width="80" height="5"/>
+      <rect class="barG" x="260" y="58" width="60" height="3"/>
 
-    <!-- noise blocks -->
-    <g class="noise">
-      <rect x="292" y="62" width="18" height="6" fill="#00F0FF"/>
-      <rect x="468" y="99" width="14" height="5" fill="#FF0055"/>
-      <rect x="338" y="84" width="9" height="9" fill="#E6FFFF"/>
-      <rect x="510" y="70" width="22" height="4" fill="#00F0FF" fill-opacity=".8"/>
-      <rect x="301" y="107" width="11" height="3" fill="#FF0055"/>
-      <rect x="445" y="60" width="7" height="11" fill="#0D0D0D"/>
-    </g>
-    <g class="noise2">
-      <rect x="360" y="64" width="26" height="4" fill="#FF0055"/>
-      <rect x="488" y="92" width="16" height="7" fill="#00F0FF"/>
-      <rect x="318" y="76" width="8" height="8" fill="#E6FFFF"/>
-      <rect x="410" y="104" width="20" height="3" fill="#00F0FF" fill-opacity=".75"/>
-      <rect x="276" y="90" width="12" height="4" fill="#0D0D0D"/>
-      <rect x="534" y="80" width="6" height="14" fill="#FF0055"/>
+      <g class="noise">
+        <rect x="286" y="58" width="26" height="8" fill="#00F0FF"/>
+        <rect x="470" y="96" width="20" height="7" fill="#FF0055"/>
+        <rect x="330" y="80" width="12" height="12" fill="#E6FFFF"/>
+        <rect x="520" y="66" width="28" height="5" fill="#00F0FF" fill-opacity=".85"/>
+        <rect x="298" y="108" width="16" height="5" fill="#FF0055"/>
+        <rect x="440" y="56" width="10" height="16" fill="#0D0D0D"/>
+        <rect x="360" y="148" width="22" height="5" fill="#00F0FF"/>
+      </g>
+      <g class="noise2">
+        <rect x="348" y="62" width="34" height="5" fill="#FF0055"/>
+        <rect x="490" y="90" width="22" height="9" fill="#00F0FF"/>
+        <rect x="310" y="74" width="11" height="11" fill="#E6FFFF"/>
+        <rect x="400" y="104" width="28" height="4" fill="#00F0FF" fill-opacity=".8"/>
+        <rect x="260" y="88" width="16" height="6" fill="#0D0D0D"/>
+        <rect x="540" y="78" width="8" height="18" fill="#FF0055"/>
+        <rect x="230" y="144" width="18" height="6" fill="#FF0055"/>
+        <rect x="560" y="146" width="14" height="5" fill="#00F0FF"/>
+      </g>
+      <g class="noise3">
+        <rect x="390" y="54" width="18" height="9" fill="#E6FFFF"/>
+        <rect x="275" y="100" width="24" height="4" fill="#00F0FF"/>
+        <rect x="455" y="70" width="14" height="14" fill="#FF0055"/>
+        <rect x="505" y="110" width="30" height="3" fill="#E6FFFF"/>
+        <rect x="320" y="64" width="8" height="20" fill="#0D0D0D"/>
+        <rect x="200" y="80" width="12" height="6" fill="#00F0FF"/>
+        <rect x="600" y="92" width="16" height="8" fill="#FF0055"/>
+      </g>
+
+      <!-- full-frame tears: a whole horizontal band of the banner is displaced -->
+      <g class="ftear">
+        <rect x="0" y="8" width="800" height="28" fill="#0D0D0D"/>
+        <g clip-path="url(#ftearclip)">
+          <g class="ftear-shift">
+            <rect width="800" height="200" fill="url(#g)"/>
+            <use href="#devo" xlink:href="#devo" fill="#E6FFFF"/>
+            <use href="#sub" xlink:href="#sub" fill="#7FA6A6"/>
+          </g>
+        </g>
+      </g>
+      <g class="ftear2">
+        <rect x="0" y="124" width="800" height="16" fill="#0D0D0D"/>
+        <g clip-path="url(#ftear2clip)">
+          <g class="ftear2-shift">
+            <rect width="800" height="200" fill="url(#g)"/>
+            <use href="#devo" xlink:href="#devo" fill="#E6FFFF"/>
+            <use href="#sub" xlink:href="#sub" fill="#7FA6A6"/>
+          </g>
+        </g>
+      </g>
     </g>
 
     <rect class="scanfine" width="800" height="200"/>
