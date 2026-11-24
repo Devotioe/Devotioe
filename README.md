@@ -6,7 +6,7 @@
 
 <div align="center">
 
-**Information Management @ National Chengchi University (NCCU), Taipei**<br/>
+**Management Information System @ National Chengchi University (NCCU), Taipei**<br/>
 <sub>Psychology & Brain Science Program</sub>
 
 </div>
